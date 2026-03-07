@@ -78,7 +78,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.45 }}
             >
                 <Link href="">
-                    <div className="bg-white items-center border-2 border-white hover:border-white/85 text-black sm:text-lg text-sm w-fit px-6 py-3 rounded-full font-bold hover:bg-white/85 cursor-pointer transition duration-300 hover:translate-x-0.5 hover:-translate-y-1 flex gap-2">
+                    <div className="items-center border-2 bg-white border-white text-black sm:text-lg text-sm w-fit px-6 py-3 rounded-full font-bold cursor-pointer transition duration-300 hover:translate-x-0.5 hover:-translate-y-1 flex gap-2">
                         <LuBookOpenText aria-hidden className="w-5 sm:w-6 h-5 sm:h-6" />
                         <span>Explore</span>
                     </div>

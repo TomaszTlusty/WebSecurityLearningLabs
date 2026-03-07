@@ -44,28 +44,28 @@ export default function PathsBox() {
                         No paths match your search.
                     </p>
                 ) : (
-                    filtered.map((module) => (
+                    filtered.map((Path) => (
                         <div
-                            key={module.id}
-                            className="group flex flex-col p-5 w-full rounded-3xl border border-white/10 bg-white/2 hover:bg-white/5 hover:border-white/20 transition-all duration-200 backdrop-blur-md min-h-[16rem]"
+                            key={Path.id}
+                            className="group flex flex-col p-5 w-full rounded-3xl border border-white/10 bg-white/2 hover:bg-white/5 hover:border-white/20 transition-all duration-200 backdrop-blur-md min-h-64"
                         >
-                            <BackgroundSVG srcImg={module.bgImg} />
+                            <BackgroundSVG srcImg={Path.bgImg} />
                             <div className="flex items-center justify-between gap-3 mb-3">
-                                <h3 className="font-semibold text-lg leading-snug text-white/90">{module.title}</h3>
-                                <DifficultyBadge difficulty={module.difficulty} />
+                                <h3 className="font-semibold text-lg leading-snug text-white/90">{Path.title}</h3>
+                                <DifficultyBadge difficulty={Path.difficulty} />
                             </div>
 
                             <p className="text-sm text-white/40 leading-relaxed flex-1 mb-5">
-                                {module.description}
+                                {Path.description}
                             </p>
 
                             <h4 className={"font-medium text-white/50"}>
-                                Contains {module.modulesCount} Modules
+                                Contains {Path.modulesCount} Modules
                             </h4>
 
                             <div className="flex items-center justify-between pt-3 border-t border-white/8">
                                 <Link
-                                    href={module.id}
+                                    href={`/path/${Path.id}`}
                                     className="flex items-center gap-1.5 text-xs font-semibold text-white/70 hover:text-white transition-colors duration-150 group/link"
                                 >
                                     <FaDoorOpen className="text-xs" />
@@ -75,7 +75,7 @@ export default function PathsBox() {
 
                                 <span className="flex items-center gap-1 text-xs text-white/30 font-mono">
                                     <FaClock className="text-[10px]" />
-                                    {module.estimatedHours}h
+                                    {Path.estimatedHours}h
                                 </span>
                             </div>
                         </div>

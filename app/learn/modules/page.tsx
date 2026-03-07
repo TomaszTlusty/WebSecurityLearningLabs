@@ -3,7 +3,7 @@ import UserStreak from "@/components/learnDashBoardComponents/UserStreak";
 import UserLevel from "@/components/learnDashBoardComponents/UserLevel";
 import AltFooter from "@/components/Base/AltFooter"
 import {AnimatedBackground} from "@/components/Base/AnimatedBackground";
-import ModulesBoxofModules from "@/components/learnDashBoardComponents/modules/BoxOfModules"
+import BoxOfModules from "@/components/learnDashBoardComponents/modules/BoxOfModules"
 
 
 export default function Learn(){
@@ -17,7 +17,7 @@ export default function Learn(){
                     <UserLevel/>
                 </aside>
                 <main className="">
-                    <ModulesBoxofModules/>
+                    <BoxOfModules/>
                 </main>
             </div>
             <AltFooter/>

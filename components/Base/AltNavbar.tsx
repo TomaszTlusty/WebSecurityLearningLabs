@@ -32,8 +32,7 @@ const defaultSections: NavSection[] = [
         heading: "MANAGEMENT",
         links: [
             { label: "My Badges", href: "/badges" },
-            { label: "Profile", href: "/profile" },
-            { label: "Settings", href: "/profile/settings" },
+            { label: "Settings", href: "/settings" },
         ],
     },
     {
