@@ -15,19 +15,19 @@ const SUGGESTED: {
         title: "Linux Fundamentals",
         description: "Master the command line, file systems, and core Unix tools used in every professional environment.",
         difficulty: "Easy",
-        slug: "linux-fundamentals",
+        slug: "1000",
     },
     {
         title: "Networking Basics",
         description: "Understand TCP/IP, DNS, and how data moves across the modern internet.",
         difficulty: "Medium",
-        slug: "networking-basics",
+        slug: "1001",
     },
     {
         title: "Web Exploitation",
         description: "Discover common vulnerabilities like XSS, SQLi, and IDOR through hands-on challenges.",
         difficulty: "Hard",
-        slug: "web-exploitation",
+        slug: "1001",
     },
 ];
 
@@ -45,7 +45,7 @@ export default function SuggestedModules() {
                 {SUGGESTED.map((module) => (
                     <li
                         key={module.title}
-                        className="group flex flex-col gap-2 bg-white/2  border border-white/10 hover:border-white/20 rounded-2xl p-4 transition-all duration-200"
+                        className="group flex flex-col gap-2 bg-white/2  border border-white/10 hover:border-white/20 rounded-3xl p-4 transition-all duration-200"
                     >
                         <div className="flex items-start justify-between gap-2">
                             <h3 className="text-white font-semibold text-base leading-tight">
@@ -59,7 +59,7 @@ export default function SuggestedModules() {
                         </p>
 
                         <Link
-                            href={`/modules/${module.slug}`}
+                            href={`/module/${module.slug}`}
                             className="flex items-center gap-1.5 text-sm font-semibold text-white/70 hover:text-white w-fit mt-1 transition-colors duration-150 group/link"
                         >
                             <FaBookSkull className="text-xs" />

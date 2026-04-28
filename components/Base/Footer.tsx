@@ -1,6 +1,7 @@
 import { FaShield } from "react-icons/fa6";
 import { FaXTwitter, FaGithub } from "react-icons/fa6";
 import { LuMail } from "react-icons/lu";
+import Link from "next/link";
 
 export default function Footer() {
     const footerSections = [
@@ -36,12 +37,12 @@ export default function Footer() {
     const socials = [
         {
             label: "GitHub",
-            href: "https://github.com/FarciarzYT",
+            href: "https://github.com/TomaszTlusty",
             icon: FaGithub,
         },
         {
             label: "Twitter / X",
-            href: "https://x.com/FarciarzYT",
+            href: "https://x.com/TlustyTomasz",
             icon: FaXTwitter,
         },
     ];
@@ -117,7 +118,7 @@ export default function Footer() {
                             const Icon = social.icon;
 
                             return (
-                                <a
+                                <Link
                                     key={social.label}
                                     href={social.href}
                                     target="_blank"
@@ -126,7 +127,7 @@ export default function Footer() {
                                     className="rounded-xl  transition-all duration-200 hover:scale-110 text-white/80 hover:text-white"
                                 >
                                     <Icon size={22} />
-                                </a>
+                                </Link>
                             );
                         })}
                     </div>
