@@ -12,7 +12,9 @@ export default function App() {
       <Navbar />
       <main>
         <LearningBox />
-        <CustomTerminal />
+        <div className="hidden md:block">
+          <CustomTerminal />
+        </div>
       </main>
       <AltFooter />
     </>

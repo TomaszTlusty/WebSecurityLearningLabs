@@ -33,24 +33,24 @@ const articleItems = [
 export function LearningBox() {
     return (
         <>
-            <section className={"grid grid-rows mx-auto mt-32 mb-10"}>
-                <div className="w-full max-3xl mx-auto  gap-8 ">
+            <section className={"grid grid-rows mx-auto mt-24 sm:mt-32 mb-10 px-4"}>
+                <div className="w-full max-w-3xl mx-auto">
                     <header
-                        className={"p-8 rounded-3xl flex flex-col  gap-x-6 items-center mx-auto"}>
+                        className={"p-6 sm:p-8 rounded-3xl flex flex-col gap-x-6 items-center mx-auto"}>
                         <Image
                             src="/img/minimalist-fox-hacker-logo.svg"
                             alt="Logo"
                             width="100"
                             height="100"
                         />
-                        <div className={"flex flex-col"}>
-                        <h2 className={"text-white font-bold leading-tight text-6xl"}>
+                        <div className={"flex flex-col items-center text-center"}>
+                        <h2 className={"text-white font-bold leading-tight text-3xl sm:text-5xl xl:text-6xl"}>
                             UserName
                         </h2>
                             <span>@username</span>
                         </div>
 
-                        <span className={"text-white/85 font-bold leading-tight text-3xl"}>
+                        <span className={"text-white/85 font-bold leading-tight text-xl sm:text-3xl"}>
                             UserRank
                         </span>
 

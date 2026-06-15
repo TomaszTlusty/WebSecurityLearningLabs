@@ -94,7 +94,7 @@ export default function CustomTerminal() {
     }, []);
 
     return (
-        <div className="relative w-full max-w-3xl mx-auto p-8 border bg-white/2 border-white/10 backdrop-blur-md rounded-3xl text-white font-mono text-sm mb-8 max-h-[600px] flex flex-col">
+        <div className="relative w-full max-w-3xl mx-4 sm:mx-auto p-4 sm:p-8 border bg-white/2 border-white/10 backdrop-blur-md rounded-3xl text-white font-mono text-sm mb-8 max-h-[600px] flex flex-col">
 
             {/* Output container with custom scrollbar */}
             <div
