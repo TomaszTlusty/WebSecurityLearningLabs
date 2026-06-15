@@ -1,26 +1,19 @@
 import AltNavbar from "@/components/Base/AltNavbar"
-import UserStreak from "@/components/learnDashBoardComponents/UserStreak";
-import UserLevel from "@/components/learnDashBoardComponents/UserLevel";
 import AltFooter from "@/components/Base/AltFooter"
-import {AnimatedBackground} from "@/components/Base/AnimatedBackground";
+import { AnimatedBackground } from "@/components/Base/AnimatedBackground"
 import PathsBox from "@/components/learnDashBoardComponents/paths/BoxOfPaths"
 
-
-export default function Learn(){
+export default function Paths() {
     return (
         <>
-            <AnimatedBackground/>
-            <div className="2xl:flex flex-row">
-                <aside className={"flex-col"}>
-                    <AltNavbar/>
-                    <UserStreak/>
-                    <UserLevel/>
-                </aside>
-                <main className="flex flex-col ">
-                    <PathsBox/>
-                </main>
-            </div>
-            <AltFooter/>
+            <AnimatedBackground />
+            <AltNavbar />
+            <main className="2xl:pl-64 min-h-screen flex flex-col">
+                <div className="max-w-5xl mx-auto w-full px-6 py-10">
+                    <PathsBox />
+                </div>
+            </main>
+            <AltFooter />
         </>
     )
 }

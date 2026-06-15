@@ -25,7 +25,7 @@ function StatusIcon({ status }: { status: "completed" | "current" | "locked" }) 
 
 export default function ModulesBox() {
     return (
-        <section className="bg-white/2 mb-8 border border-white/10 mt-16 w-full max-w-xl 2xl:max-w-6xl mx-auto rounded-3xl backdrop-blur-md p-6">
+        <section className="bg-white/2 mb-8 border border-white/10 w-full mx-auto rounded-3xl backdrop-blur-md p-6">
 
             {/* Header row */}
             <div className="flex items-start justify-between gap-4 max-w-lg mx-auto">
