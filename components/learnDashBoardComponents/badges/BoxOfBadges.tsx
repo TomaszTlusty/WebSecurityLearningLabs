@@ -12,7 +12,11 @@ export default function BadgesBox() {
     });
 
     return (
-        <section className="w-full max-w-4xl 2xl:min-w-4xl mx-auto mt-16 mb-8 px-4 sm:px-0">
+        <section className="w-full mx-auto mb-8">
+            <span className="block mb-4 text-sm tracking-widest uppercase font-mono text-primary/90">
+                {"// achievements"}
+            </span>
+            <h1 className="text-3xl font-bold text-white tracking-tight mb-6">My Badges</h1>
             <div className="bg-white/2 border border-white/10 p-4 rounded-3xl backdrop-blur-md mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="relative flex-1 max-w-xs">
                     <FaMagnifyingGlass className={"absolute left-3 top-1/2 -translate-y-1/2 text-white/25 w-4 h-4"}/>

@@ -1,12 +1,11 @@
-
-
 export default function SettingsHeader() {
     return (
-       <>
-           <section className="bg-white/2 border border-white/10 mt-16 w-full max-w-xl 2xl:min-w-4xl mx-auto rounded-3xl backdrop-blur-md p-6">
-                   <h2 className={"text-center text-2xl font-black "}>User Settings</h2>
-
-           </section>
-       </>
-    );
+        <div className="mb-6">
+            <span className="block mb-2 text-sm tracking-widest uppercase font-mono text-primary/90">
+                {"// account"}
+            </span>
+            <h1 className="text-3xl font-bold text-white tracking-tight">Settings</h1>
+            <p className="text-white/40 text-sm mt-1">Manage your account preferences</p>
+        </div>
+    )
 }

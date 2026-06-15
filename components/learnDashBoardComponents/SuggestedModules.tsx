@@ -1,9 +1,7 @@
 import RoomType from "@/types/RoomType";
 import DifficultyBadge from "@/components/ui/DifficultyBadge";
-
 import Link from "next/link";
-import React from "react";
-import { FaBookSkull, FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaDoorOpen } from "react-icons/fa6";
 
 const SUGGESTED: {
     title: string
@@ -27,48 +25,51 @@ const SUGGESTED: {
         title: "Web Exploitation",
         description: "Discover common vulnerabilities like XSS, SQLi, and IDOR through hands-on challenges.",
         difficulty: "Hard",
-        slug: "1001",
+        slug: "1002",
     },
-];
+]
 
 export default function SuggestedModules() {
     return (
-        <section className="bg-white/2 w-full max-w-xl mx-auto 2xl:mx-0 backdrop-blur-md rounded-3xl p-6 border border-white/10">
-            <header className="mb-6">
-                <h2 className="text-white text-2xl font-bold tracking-tight">
-                    Suggested Modules
-                </h2>
-                <p className="text-white/50 text-sm mt-1">Curated paths to level up your skills</p>
-            </header>
+        <section className="mb-8 w-full">
+            <span className="block mb-4 text-xs tracking-widest uppercase font-mono text-primary/80">
+                {"// for you"}
+            </span>
+            <h2 className="text-lg font-bold text-white tracking-tight mb-4">Suggested Next</h2>
 
-            <ul className="flex flex-col gap-3">
-                {SUGGESTED.map((module) => (
-                    <li
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {SUGGESTED.map((module, i) => (
+                    <div
                         key={module.title}
-                        className="group flex flex-col gap-2 bg-white/2  border border-white/10 hover:border-white/20 rounded-3xl p-4 transition-all duration-200"
+                        className="group flex flex-col gap-3 bg-white/2 backdrop-blur-xl border border-white/8 hover:border-white/20 hover:bg-white/4 rounded-3xl p-5 transition-all duration-200"
                     >
                         <div className="flex items-start justify-between gap-2">
-                            <h3 className="text-white font-semibold text-base leading-tight">
-                                {module.title}
-                            </h3>
+                            <span className="text-xs font-mono text-white/20 tabular-nums">
+                                {String(i + 1).padStart(2, "0")}
+                            </span>
                             <DifficultyBadge difficulty={module.difficulty} />
                         </div>
 
-                        <p className="text-white/55 text-sm leading-relaxed line-clamp-2">
-                            {module.description}
-                        </p>
+                        <div className="flex-1">
+                            <h3 className="text-white font-semibold text-sm leading-snug mb-2">
+                                {module.title}
+                            </h3>
+                            <p className="text-white/35 text-xs leading-relaxed line-clamp-3">
+                                {module.description}
+                            </p>
+                        </div>
 
                         <Link
                             href={`/module/${module.slug}`}
-                            className="flex items-center gap-1.5 text-sm font-semibold text-white/70 hover:text-white w-fit mt-1 transition-colors duration-150 group/link"
+                            className="flex items-center gap-1.5 text-xs font-semibold text-white/50 hover:text-white w-fit transition-colors duration-150 group/link mt-1"
                         >
-                            <FaBookSkull className="text-xs" />
+                            <FaDoorOpen className="text-[10px]" />
                             <span>Enroll</span>
-                            <FaArrowRight className="text-xs opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-150" />
+                            <FaArrowRight className="text-[10px] opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-150" />
                         </Link>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </section>
-    );
+    )
 }

@@ -30,7 +30,7 @@ export default function LastActivity({ room }: LastActivityProps) {
         {"// last activity"}
       </span>
 
-            <div className="relative overflow-hidden rounded-3xl border bg-white/2 border-white/10 backdrop-blur-md p-8">
+            <div className="relative overflow-hidden rounded-3xl border bg-white/2 border-white/10 backdrop-blur-xl p-8">
                 <BackgroundSVG srcImg="/img/bored-fox-mascot.svg"/>
 
                 <div className="relative z-10 flex items-start gap-8">

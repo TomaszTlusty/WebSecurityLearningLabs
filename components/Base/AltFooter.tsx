@@ -15,7 +15,7 @@ export default function AltFooter() {
   ];
 
   return (
-    <footer className="relative 2xl:pl-64 bg-black border-t pt-2 justify-between items-center flex flex-row border-white/10 mt-32 overflow-hidden">
+    <footer className="relative 2xl:pl-64 bg-black border-t pt-2 justify-between items-center flex flex-row border-white/10 mt-32 overflow-hidden p-2">
       <h1 className="text-3xl font-black text-white/80 leading-none whitespace-nowrap hidden sm:block">
         Web Security Learning Labs
       </h1>

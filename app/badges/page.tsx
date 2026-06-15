@@ -1,25 +1,19 @@
 import AltNavbar from "@/components/Base/AltNavbar"
-import UserStreak from "@/components/learnDashBoardComponents/UserStreak";
-import UserLevel from "@/components/learnDashBoardComponents/UserLevel";
 import AltFooter from "@/components/Base/AltFooter"
-import {AnimatedBackground} from "@/components/Base/AnimatedBackground";
-import BoxOfbadges from "@/components/learnDashBoardComponents/badges/BoxOfBadges"
+import { AnimatedBackground } from "@/components/Base/AnimatedBackground"
+import BoxOfBadges from "@/components/learnDashBoardComponents/badges/BoxOfBadges"
 
-export default function Learn(){
+export default function Badges() {
     return (
         <>
-            <AnimatedBackground/>
-            <div className="2xl:flex flex-row">
-                <aside className={"flex-col"}>
-                    <AltNavbar/>
-                    <UserStreak/>
-                    <UserLevel/>
-                </aside>
-                <main className="flex flex-col ">
-                    <BoxOfbadges/>
-                </main>
-            </div>
-            <AltFooter/>
+            <AnimatedBackground />
+            <AltNavbar />
+            <main className="2xl:pl-64 min-h-screen flex flex-col">
+                <div className="max-w-5xl mx-auto w-full px-6 py-10">
+                    <BoxOfBadges />
+                </div>
+            </main>
+            <AltFooter />
         </>
     )
 }

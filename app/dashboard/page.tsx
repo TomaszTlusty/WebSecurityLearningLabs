@@ -1,26 +1,20 @@
-import Navbar from "@/components/Base/Navbar"
+import Navbar from "@/components/Base/Navbar";
 import AltFooter from "@/components/Base/AltFooter";
 
-import {AnimatedBackground} from "@/components/Base/AnimatedBackground";
-import {LearningBox} from "@/components/dashboardComponenets/LearningBox"
-import CustomTerminal from "@/components/dashboardComponenets/Terminal"
-import LastActivity from "@/components/learnDashBoardComponents/LastActivity";
-import {lastRoom} from "@/Data/LastRoomData";
-
+import { AnimatedBackground } from "@/components/Base/AnimatedBackground";
+import { LearningBox } from "@/components/dashboardComponenets/LearningBox";
+import CustomTerminal from "@/components/dashboardComponenets/Terminal";
 
 export default function App() {
-
-
-    return (
-        <>
-            <AnimatedBackground/>
-            <Navbar/>
-            <main>
-                <LearningBox/>
-                <LastActivity room={lastRoom}/>
-                <CustomTerminal/>
-            </main>
-            <AltFooter/>
-        </>
-    )
+  return (
+    <>
+      <AnimatedBackground />
+      <Navbar />
+      <main>
+        <LearningBox />
+        <CustomTerminal />
+      </main>
+      <AltFooter />
+    </>
+  );
 }

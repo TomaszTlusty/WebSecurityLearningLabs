@@ -161,7 +161,7 @@ export default function AltNavbar({
 
             {/* Mobile backdrop */}
             <div
-                className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 2xl:hidden ${open ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                className={`fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-300 2xl:hidden ${open ? "opacity-100" : "pointer-events-none opacity-0"}`}
                 onClick={close}
                 aria-hidden="true"
             />

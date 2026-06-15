@@ -26,7 +26,11 @@ export default function PathsBox() {
     })
 
     return (
-        <section className="w-full max-w-4xl 2xl:min-w-4xl mx-auto mt-16 mb-8 px-4 sm:px-0">
+        <section className="w-full mx-auto mb-8">
+            <span className="block mb-4 text-sm tracking-widest uppercase font-mono text-primary/90">
+                {"// learn"}
+            </span>
+            <h1 className="text-3xl font-bold text-white tracking-tight mb-6">Paths</h1>
             <FilterHeader
                 search={search}
                 setSearch={setSearch}

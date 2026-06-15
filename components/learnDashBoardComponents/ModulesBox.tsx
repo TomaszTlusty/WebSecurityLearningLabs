@@ -1,97 +1,114 @@
+"use client";
+
 import Link from "next/link";
-import { FaCheckCircle, FaPlayCircle, FaCircle } from "react-icons/fa";
-import { FaArrowRight, FaDoorOpen } from "react-icons/fa6";
-import React from "react";
+import { FaLock } from "react-icons/fa";
+import { FaArrowRight, FaCircleCheck, FaCirclePlay } from "react-icons/fa6";
 
 const modules = [
-    { id: 1, title: "Introduction to Networks",   status: "completed" as const },
-    { id: 2, title: "Network Topologies",          status: "completed" as const },
-    { id: 3, title: "The OSI Model",               status: "completed" as const },
-    { id: 4, title: "TCP/IP Fundamentals",         status: "current"   as const },
-    { id: 5, title: "Packet Analysis Basics",      status: "locked"    as const },
-    { id: 6, title: "Wireshark Deep Dive",         status: "locked"    as const },
-    { id: 7, title: "Traffic Pattern Recognition", status: "locked"    as const },
-    { id: 8, title: "Final Assessment",            status: "locked"    as const },
+    { id: "0001", title: "IDOR - User Profile Access",   status: "completed" as const, progress: 100 },
+    { id: "0002", title: "SQL Injection - Login Bypass",  status: "completed" as const, progress: 100 },
+    { id: "0003", title: "Directory Traversal - Basic",   status: "current"   as const, progress: 45  },
+    { id: "0004", title: "XSS - Reflected Payload",       status: "locked"    as const, progress: 0   },
 ];
 
 const completedCount  = modules.filter((m) => m.status === "completed").length;
 const progressPercent = Math.round((completedCount / modules.length) * 100);
 
-function StatusIcon({ status }: { status: "completed" | "current" | "locked" }) {
-    if (status === "completed") return <FaCheckCircle className="size-4 shrink-0 text-emerald-400" />;
-    if (status === "current")   return <FaPlayCircle  className="size-4 shrink-0 text-sky-300" />;
-    return                             <FaCircle      className="size-4 shrink-0 text-white/20" />;
-}
-
 export default function ModulesBox() {
     return (
-        <section className="bg-white/2 mb-8 border border-white/10 w-full mx-auto rounded-3xl backdrop-blur-md p-6">
+        <section className="mb-8 w-full rounded-3xl backdrop-blur-xl overflow-hidden bg-white/2 border border-white/10">
 
-            {/* Header row */}
-            <div className="flex items-start justify-between gap-4 max-w-lg mx-auto">
-                <div>
-                    <span className="text-xs text-white/40 uppercase tracking-widest font-medium">Current Path</span>
-                    <h3 className="text-2xl text-white font-bold tracking-tight mt-0.5">
-                        Intro to Network Analysis
-                    </h3>
+            {/* Header */}
+            <div className="px-6 pt-6 pb-5 border-b border-white/8">
+                <span className="block mb-3 text-[10px] tracking-widest uppercase font-mono text-primary/70">
+                    {"// current path"}
+                </span>
+                <div className="flex items-center justify-between gap-4 mb-5">
+                    <div>
+                        <h3 className="text-lg font-bold text-white tracking-tight">
+                            Web Security Foundations
+                        </h3>
+                        <p className="text-xs text-white/30 mt-0.5 font-mono">
+                            4 modules · ~19h estimated
+                        </p>
+                    </div>
+                    <Link
+                        href="/module/0003"
+                        className="shrink-0 flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full border border-white/10 bg-white/5 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200 group/link"
+                    >
+                        <span>Continue</span>
+                        <FaArrowRight className="text-[10px] -translate-x-0.5 group-hover/link:translate-x-0 transition-transform duration-150" />
+                    </Link>
                 </div>
 
-                <Link
-                    href="/modules/"
-                    className="flex items-center gap-1.5 shrink-0 text-sm font-semibold text-white  mt-1 transition-colors duration-150 group/link"
-                >
-                    <FaDoorOpen className="text-xs" />
-                    <span>Continue</span>
-                    <FaArrowRight className="text-xs opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-150" />
-                </Link>
-            </div>
-
-            {/* Progress bar */}
-            <div className="mt-4 max-w-lg mx-auto flex flex-col gap-1.5">
-                <div className="flex justify-between text-xs text-white/35">
-                    <span>{completedCount} of {modules.length} modules complete</span>
-                    <span>{progressPercent}%</span>
-                </div>
-                <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
-                    <div
-                        className="h-full rounded-full bg-linear-to-r from-sky-400 to-emerald-400 transition-all duration-500"
-                        style={{ width: `${progressPercent}%` }}
-                    />
+                {/* Progress */}
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between text-[10px] text-white/30 font-mono">
+                        <span>{completedCount} / {modules.length} completed</span>
+                        <span>{progressPercent}%</span>
+                    </div>
+                    <div className="h-1 w-full rounded-full bg-white/8 overflow-hidden">
+                        <div
+                            className="h-full rounded-full bg-gradient-to-r from-sky-500 to-emerald-400 transition-all duration-700"
+                            style={{ width: `${progressPercent}%` }}
+                        />
+                    </div>
                 </div>
             </div>
 
             {/* Module list */}
-            <ol className="mt-6 flex flex-col gap-1 max-w-lg mx-auto">
-                {modules.map((mod) => (
+            <ol className="flex flex-col">
+                {modules.map((mod, i) => (
                     <li
                         key={mod.id}
-                        className={`flex items-center gap-3 rounded-2xl px-4 py-2.5 transition-all duration-150 ${
-                            mod.status === "current"
-                                ? "bg-white/8 border border-white/15"
-                                : mod.status === "locked"
-                                    ? "opacity-40"
-                                    : "hover:bg-white/2"
+                        className={`relative flex items-center gap-4 px-6 py-4 border-b border-white/5 last:border-0 transition-all duration-150 ${
+                            mod.status === "current"  ? "bg-sky-500/5" :
+                            mod.status === "locked"   ? "opacity-30"   :
+                            "hover:bg-white/2"
                         }`}
                     >
-                        <StatusIcon status={mod.status} />
+                        {/* Active indicator */}
+                        {mod.status === "current" && (
+                            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-6 rounded-full bg-sky-400" />
+                        )}
 
-                        <span className="text-xs text-white/30 font-mono w-5 shrink-0">
-                            {String(mod.id).padStart(2, "0")}
+                        {/* Icon */}
+                        <div className="shrink-0">
+                            {mod.status === "completed" && <FaCircleCheck className="size-4 text-emerald-400" />}
+                            {mod.status === "current"   && <FaCirclePlay  className="size-4 text-sky-400" />}
+                            {mod.status === "locked"    && <FaLock         className="size-3.5 text-white/30" />}
+                        </div>
+
+                        {/* Number */}
+                        <span className="text-[10px] text-white/20 font-mono w-4 shrink-0 tabular-nums">
+                            {String(i + 1).padStart(2, "0")}
                         </span>
 
-                        <span className={`text-sm flex-1 ${
-                            mod.status === "completed" ? "text-white/50 line-through"  :
-                                mod.status === "current"   ? "text-white font-medium"      :
-                                    "text-white/50"
+                        {/* Title */}
+                        <span className={`text-sm flex-1 leading-snug ${
+                            mod.status === "completed" ? "text-white/40 line-through decoration-white/20" :
+                            mod.status === "current"   ? "text-white font-medium" :
+                                                         "text-white/50"
                         }`}>
                             {mod.title}
                         </span>
 
-                        {mod.status === "current" && (
-                            <span className="text-xs bg-sky-400/15 text-sky-300 px-2 py-0.5 rounded-full font-medium">
-                                In Progress
-                            </span>
-                        )}
+                        {/* Right side */}
+                        <div className="shrink-0 flex items-center gap-3">
+                            {mod.status === "completed" && (
+                                <span className="text-[10px] font-mono text-emerald-400/50 uppercase tracking-wider">Done</span>
+                            )}
+                            {mod.status === "current" && (
+                                <div className="flex items-center gap-2">
+                                    <div className="w-16 h-0.5 rounded-full bg-white/10 overflow-hidden hidden sm:block">
+                                        <div className="h-full rounded-full bg-sky-400" style={{ width: `${mod.progress}%` }} />
+                                    </div>
+                                    <span className="text-[10px] font-mono text-sky-400 tabular-nums w-7 text-right">
+                                        {mod.progress}%
+                                    </span>
+                                </div>
+                            )}
+                        </div>
                     </li>
                 ))}
             </ol>
